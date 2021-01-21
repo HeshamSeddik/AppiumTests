@@ -19,12 +19,28 @@ import io.appium.java_client.functions.ExpectedCondition;
 import io.appium.java_client.touch.offset.PointOption;
 
 public class AppiumTests {
-
-	private static final String ET_USERNAME_ID = "et_username";
+	
 	static AppiumDriver<MobileElement> driver;
 	final static String BASE_VIEW_ID = "com.fanzword.staging:id/";
+	private static final String ET_TEAM_AWAY_SCORE_ID = "et_team_away_score";
+	private static final String ET_TEAM_HOME_SCORE_ID = "et_team_home_score";
+	private static final String LL_PREDICT_SCORE_ID = "ll_predict_score";
+	private static final String ACTV_FAVORITE_TEAM_ID = "actv_favorite_team";
+	private static final String CONTINUE_ID = "btn_continue";
+	private static final String SKIP_ID = "tv_skip";
+	private static final String SAVE_ID = "btn_save";
+	private static final String CREATE_ACCOUNT_ID = "btn_create_account";
+	private static final String SIGN_IN_ID = "btn_sign_in";
+	private static final String TV_COUNTRY_NAME_ID = "tv_country_name";
+	private static final String TV_COUNTRY_ID = "tv_country";
+	private static final String ET_CONFIRM_PASSWORD_ID = "et_confirm_password";
+	private static final String ET_PASSWORD_ID = "et_password";
+	private static final String ET_EMAIL_ID = "et_email";
+	private static final String ET_USERNAME_ID = "et_username";
+	
 	static String email = "hseddik@identity-solutions.org";
 	static String pw = "12345678";
+	
 	public static void main(String[] args) {
 		
 		try {
@@ -69,33 +85,33 @@ public class AppiumTests {
 	}
 	
 	public static void signin(){		
-		fillIn("et_email", email);
-		fillIn("et_password", pw);
-		click("btn_sign_in");
+		fillIn(ET_EMAIL_ID, email);
+		fillIn(ET_PASSWORD_ID, pw);
+		click(SIGN_IN_ID);
 		
 	}
 	
 	public static void signUp() {
 		int randomNumber = rng(100000);
 		fillIn(ET_USERNAME_ID, "Etch" + randomNumber);
-		fillIn("et_email","EtchAutomation"+ randomNumber +"@fanzword.com");
-		fillIn("et_password", pw);
-		fillIn("et_confirm_password", pw);
-		click("tv_country");
-		clickIndex(BASE_VIEW_ID + "tv_country_name", 2);
-		click("btn_create_account");
+		fillIn(ET_EMAIL_ID,"EtchAutomation"+ randomNumber +"@fanzword.com");
+		fillIn(ET_PASSWORD_ID, pw);
+		fillIn(ET_CONFIRM_PASSWORD_ID, pw);
+		click(TV_COUNTRY_ID);
+		clickIndex(BASE_VIEW_ID + TV_COUNTRY_NAME_ID, 2);
+		click(CREATE_ACCOUNT_ID);
 	}
 	
 	public static void guestLogin() {
-		click("tv_skip");
-		click("btn_continue");
+		click(SKIP_ID);
+		click(CONTINUE_ID);
 		clickIndexRange(BASE_VIEW_ID + "sw_league", 1, 9);
-		click("btn_save");
-		click("actv_favorite_team");
-		fillIn("actv_favorite_team","Manchester" );
+		click(SAVE_ID);
+		click(ACTV_FAVORITE_TEAM_ID);
+		fillIn(ACTV_FAVORITE_TEAM_ID,"Manchester" );
 		delay(2);
 		(new TouchAction(driver)).tap(PointOption.point(503, 871)).perform();
-		click("btn_save");
+		click(SAVE_ID);
 	}
 	
 	public static void clickIndex(String id, int index) {
@@ -104,15 +120,15 @@ public class AppiumTests {
 	}
 	
 	public static void guestPredictScore() {
-		click("ll_predict_score");
-		click("btn_create_account");
+		click(LL_PREDICT_SCORE_ID);
+		click(CREATE_ACCOUNT_ID);
 	}
 	
 	public static void predictScore() {
-		click("ll_predict_score");
-		fillIn("et_team_home_score", Integer.toString(rng(9)));
-		fillIn("et_team_away_score", Integer.toString(rng(9)));
-		click("btn_save");
+		click(LL_PREDICT_SCORE_ID);
+		fillIn(ET_TEAM_HOME_SCORE_ID, Integer.toString(rng(9)));
+		fillIn(ET_TEAM_AWAY_SCORE_ID, Integer.toString(rng(9)));
+		click(SAVE_ID);
 	}
 	
 	public static MobileElement find(String id) {
