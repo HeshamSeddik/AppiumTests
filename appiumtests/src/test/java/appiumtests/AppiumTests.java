@@ -33,19 +33,24 @@ import io.appium.java_client.touch.offset.PointOption;
 
 public class AppiumTests {
 	
-	private static final String MATCH_ID = "ll_match";
 	static AndroidDriver<MobileElement> driver;
 	static WebDriverWait wait;
 	private static final String BASE_VIEW_ID = "com.fanzword.staging:id/";
 	
+	private static final String MATCH_ID = "ll_match";
 	private static final String RATE_PLAYER_ID = "iv_rate_player";
 	private static final String RATE_PLAYER_BTN_ID = "btn_rate_player";
 	private static final String RATE_PLAYER_EIGHT_BTN = "tv_eight";
+	private static final String RECOMMEND_A_SUB_ID = "iv_recommend_sub";
+	private static final String OUT_PLAYER_SPN = "spn_player";
+	private static final String IN_PLAYER_SPN = "spn_backup_player";
+	private static final String PLAYER_NAME_LISTING_ID = "tv_player_name";
+	private static final String SUBMIT_BTN_ID = "btn_submit";
 	private static final String SANDWITCH_ID = "btn_drawer";
 	private static final String LOGOUT_ID = "tv_logout";
 	private static final String CONFIRM_LOGOUT_ID = "btn_logout";
-	private static final String ET_TEAM_AWAY_SCORE_ID = "et_team_away_score";
-	private static final String ET_TEAM_HOME_SCORE_ID = "et_team_home_score";
+	private static final String AWAY_TEAM_SCORE_ID = "et_team_away_score";
+	private static final String HOME_TEAM_SCORE_ID = "et_team_home_score";
 	private static final String LL_PREDICT_SCORE_ID = "ll_predict_score";
 	private static final String ACTV_FAVORITE_TEAM_ID = "actv_favorite_team";
 	private static final String CONTINUE_ID = "btn_continue";
@@ -89,32 +94,51 @@ public class AppiumTests {
 		
 	}
 	
-	@Test (priority=0)
-	public static void Test2() {
+	@Test (priority = 0)
+	public static void ratePlayerTestcase() {
 		signin();
-		selectMatch(MATCH_ID, 0);
+		selectMatch(0);
 		ratePlayer();
 	}
 	
-	
-	@Test (priority=1)
-	public static void Test3() {
+	@Test (priority = 1)
+	public static void recommendSubTestcase() {
 		signin();
-		selectMatch(MATCH_ID, 0);
+		selectMatch(0);
+		recommendSub();
+	}
+	
+	@Test (priority = 2)
+	public static void predictScoreTestcase() {
+		signin();
+		selectMatch(0);
 		predictScore();
 	}
 	
-	@Test (priority=2)
-	public static void Test1() {
+	@Test (priority = 3)
+	public static void guestPredictScoreTestcase() {
 		guestLogin();
-		selectMatch(MATCH_ID, 0);
+		selectMatch(0);
 		guestPredictScore();
-		signUp();
-		predictScore();
+	}
+	
+	@Test (priority = 4)
+	public static void guestRatePlayerTestcase() {
+		guestLogin();
+		selectMatch(0);
+		guestRatePlayer();
+	}
+	
+	@Test (priority = 5)
+	public static void guestRecommendSubTestcase() {
+		guestLogin();
+		selectMatch(0);
+		guestRecommendSub();
 	}
 	
 	@AfterMethod
 	public static void betweenTests() {
+		delay(1);
 		driver.startActivity(new Activity("com.fanzword.staging", "com.fanzword.ui.activities.MainActivity"));
 		logout();
 	}
@@ -128,7 +152,7 @@ public class AppiumTests {
 		
 	}
 	
-	public static void signUp() {
+	public static void signup() {
 		int randomNumber = rng(100000);
 		fillIn(ET_USERNAME_ID, "Etch" + randomNumber);
 		fillIn(ET_EMAIL_ID,"EtchAutomation"+ randomNumber +"@fanzword.com");
@@ -157,23 +181,54 @@ public class AppiumTests {
 		click(SAVE_ID);
 	}
 	
-	
-	public static void guestPredictScore() {
-		click(LL_PREDICT_SCORE_ID);
-		click(CREATE_ACCOUNT_ID);
-	}
-	
 	public static void ratePlayer() {
 		click(RATE_PLAYER_ID);
 		click(RATE_PLAYER_BTN_ID);
 		click(RATE_PLAYER_EIGHT_BTN);
 	}
 	
+	public static void recommendSub() {
+		click(RECOMMEND_A_SUB_ID);
+		click(OUT_PLAYER_SPN);
+		clickOneIndex(PLAYER_NAME_LISTING_ID, 1);
+		click(IN_PLAYER_SPN);
+		clickOneIndex(PLAYER_NAME_LISTING_ID, 1);
+		click(SUBMIT_BTN_ID);
+	}
+	
 	public static void predictScore() {
 		click(LL_PREDICT_SCORE_ID);
-		fillIn(ET_TEAM_HOME_SCORE_ID, Integer.toString(rng(9)));
-		fillIn(ET_TEAM_AWAY_SCORE_ID, Integer.toString(rng(9)));
+		fillIn(HOME_TEAM_SCORE_ID, Integer.toString(rng(9)));
+		fillIn(AWAY_TEAM_SCORE_ID, Integer.toString(rng(9)));
 		click(SAVE_ID);
+	}
+	
+	public static void guestPredictScore() {
+		click(LL_PREDICT_SCORE_ID);
+		click(CREATE_ACCOUNT_ID);
+		signup();
+		predictScore();
+	}
+	
+	public static void guestRatePlayer() {
+		click(RATE_PLAYER_ID);
+		click(RATE_PLAYER_BTN_ID);
+		click(CREATE_ACCOUNT_ID);
+		signup();
+		click(RATE_PLAYER_BTN_ID);
+		click(RATE_PLAYER_EIGHT_BTN);
+	}
+	
+	public static void guestRecommendSub() {
+		click(RECOMMEND_A_SUB_ID);
+		click(OUT_PLAYER_SPN);
+		clickOneIndex(PLAYER_NAME_LISTING_ID, 1);
+		click(IN_PLAYER_SPN);
+		clickOneIndex(PLAYER_NAME_LISTING_ID, 1);
+		click(SUBMIT_BTN_ID);
+		click(CREATE_ACCOUNT_ID);
+		signup();
+		click(SUBMIT_BTN_ID);
 	}
 	
 	public static void clickOneIndex(String id, int index) {
@@ -197,14 +252,13 @@ public class AppiumTests {
 		find(id).sendKeys(text);
 		return;
 	}
-	public static void selectMatch(String id, int index) {
-		clickOneIndex(id, index);
+	public static void selectMatch(int index) {
+		clickOneIndex(MATCH_ID, index);
 	}
 	
 	public static List<MobileElement> listing(String id) {
 		System.out.println("Trying to retrive the List");
 //		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(BASE_VIEW_ID + id)));
-//		wait.until(elementFound(By.id(BASE_VIEW_ID + id)));
 		wait.until(elementFound(By.id(BASE_VIEW_ID + id)));
 		List<MobileElement> parent = driver.findElements(By.id(BASE_VIEW_ID + id));
 		System.out.println("List retrieved...");
