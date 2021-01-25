@@ -2,26 +2,48 @@ package appiumtests;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
+import java.time.temporal.TemporalUnit;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.Activity;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.functions.ExpectedCondition;
 import io.appium.java_client.touch.offset.PointOption;
 
 public class AppiumTests {
 	
-	static AppiumDriver<MobileElement> driver;
-	final static String BASE_VIEW_ID = "com.fanzword.staging:id/";
+	private static final String MATCH_ID = "ll_match";
+	static AndroidDriver<MobileElement> driver;
+	static WebDriverWait wait;
+	private static final String BASE_VIEW_ID = "com.fanzword.staging:id/";
+	
+	private static final String RATE_PLAYER_ID = "iv_rate_player";
+	private static final String RATE_PLAYER_BTN_ID = "btn_rate_player";
+	private static final String RATE_PLAYER_EIGHT_BTN = "tv_eight";
+	private static final String SANDWITCH_ID = "btn_drawer";
+	private static final String LOGOUT_ID = "tv_logout";
+	private static final String CONFIRM_LOGOUT_ID = "btn_logout";
 	private static final String ET_TEAM_AWAY_SCORE_ID = "et_team_away_score";
 	private static final String ET_TEAM_HOME_SCORE_ID = "et_team_home_score";
 	private static final String LL_PREDICT_SCORE_ID = "ll_predict_score";
@@ -41,22 +63,8 @@ public class AppiumTests {
 	static String email = "hseddik@identity-solutions.org";
 	static String pw = "12345678";
 	
-	public static void main(String[] args) {
-		
-		try {
-			initialization();
-		}catch (Exception exp) {
-			System.out.println(exp.getCause());
-			System.out.println(exp.getMessage());
-			exp.printStackTrace();
-		}
-//		signin();
-		Test1();
-		
-	}
-	
+	@BeforeTest
 	public static void initialization() throws Exception {
-//		WebDriverWait wait = new WebDriverWait(driver, 10);
 		DesiredCapabilities cap = new DesiredCapabilities();
 		
 		cap.setCapability("deviceName", "Lenovo");
@@ -68,21 +76,50 @@ public class AppiumTests {
 		
 		URL url = new URL("http://127.0.0.1:4723/wd/hub");
 		
-		driver = new AppiumDriver<MobileElement>(url, cap);
+		driver = new AndroidDriver<MobileElement>(url, cap);
+		wait = new WebDriverWait(driver, 15);
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//		wait = new FluentWait<AppiumDriver<MobileElement>>(driver)
+//				.withTimeout(Duration.ofSeconds(30))
+//				.pollingEvery(Duration.ofSeconds(1))
+//				.ignoring(NoSuchElementException.class)
+//				.ignoring(TimeoutException.class);
 		
 		System.out.println("Application started...");
 		
 	}
 	
+	@Test (priority=0)
+	public static void Test2() {
+		signin();
+		selectMatch(MATCH_ID, 0);
+		ratePlayer();
+	}
 	
+	
+	@Test (priority=1)
+	public static void Test3() {
+		signin();
+		selectMatch(MATCH_ID, 0);
+		predictScore();
+	}
+	
+	@Test (priority=2)
 	public static void Test1() {
 		guestLogin();
-		clickIndex(BASE_VIEW_ID + "ll_match", 0);
+		selectMatch(MATCH_ID, 0);
 		guestPredictScore();
 		signUp();
 		predictScore();
 	}
+	
+	@AfterMethod
+	public static void betweenTests() {
+		driver.startActivity(new Activity("com.fanzword.staging", "com.fanzword.ui.activities.MainActivity"));
+		logout();
+	}
+	
+	
 	
 	public static void signin(){		
 		fillIn(ET_EMAIL_ID, email);
@@ -98,14 +135,20 @@ public class AppiumTests {
 		fillIn(ET_PASSWORD_ID, pw);
 		fillIn(ET_CONFIRM_PASSWORD_ID, pw);
 		click(TV_COUNTRY_ID);
-		clickIndex(BASE_VIEW_ID + TV_COUNTRY_NAME_ID, 2);
+		clickOneIndex(TV_COUNTRY_NAME_ID, rng(7));
 		click(CREATE_ACCOUNT_ID);
+	}
+	
+	public static void logout() {
+		click(SANDWITCH_ID);
+		click(LOGOUT_ID);
+		click(CONFIRM_LOGOUT_ID);
 	}
 	
 	public static void guestLogin() {
 		click(SKIP_ID);
 		click(CONTINUE_ID);
-		clickIndexRange(BASE_VIEW_ID + "sw_league", 1, 9);
+		clickIndexRange("sw_league", 1, 9);
 		click(SAVE_ID);
 		click(ACTV_FAVORITE_TEAM_ID);
 		fillIn(ACTV_FAVORITE_TEAM_ID,"Manchester" );
@@ -114,14 +157,16 @@ public class AppiumTests {
 		click(SAVE_ID);
 	}
 	
-	public static void clickIndex(String id, int index) {
-		List<MobileElement> elements = listing(id);
-		clickIndex(elements, index);
-	}
 	
 	public static void guestPredictScore() {
 		click(LL_PREDICT_SCORE_ID);
 		click(CREATE_ACCOUNT_ID);
+	}
+	
+	public static void ratePlayer() {
+		click(RATE_PLAYER_ID);
+		click(RATE_PLAYER_BTN_ID);
+		click(RATE_PLAYER_EIGHT_BTN);
 	}
 	
 	public static void predictScore() {
@@ -131,11 +176,19 @@ public class AppiumTests {
 		click(SAVE_ID);
 	}
 	
+	public static void clickOneIndex(String id, int index) {
+		List<MobileElement> elements = listing(id);
+		clickIndex(elements, index);
+	}
+	
 	public static MobileElement find(String id) {
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(BASE_VIEW_ID + id)));
+		wait.until(elementFound(By.id(BASE_VIEW_ID + id)));
 		return driver.findElement(By.id(BASE_VIEW_ID + id));
 	}
 	
 	public static void click(String id) {
+//		wait.until(elementFound(By.id(BASE_VIEW_ID + id)));
 		find(id).click();
 		return;
 	}
@@ -144,16 +197,16 @@ public class AppiumTests {
 		find(id).sendKeys(text);
 		return;
 	}
+	public static void selectMatch(String id, int index) {
+		clickOneIndex(id, index);
+	}
 	
 	public static List<MobileElement> listing(String id) {
 		System.out.println("Trying to retrive the List");
-		try {
-			TimeUnit.SECONDS.sleep(2);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		List<MobileElement> parent = driver.findElements(By.id(id));
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(BASE_VIEW_ID + id)));
+//		wait.until(elementFound(By.id(BASE_VIEW_ID + id)));
+		wait.until(elementFound(By.id(BASE_VIEW_ID + id)));
+		List<MobileElement> parent = driver.findElements(By.id(BASE_VIEW_ID + id));
 		System.out.println("List retrieved...");
 		System.out.println(parent.size());
 		return parent;
@@ -188,16 +241,22 @@ public class AppiumTests {
 	
 	
 	
-//	private ExpectedCondition<Boolean> elementFoundAndClicked(final By locator) {
+	private static ExpectedCondition<Boolean> elementFound(final By locator) {
+	    return new ExpectedCondition<Boolean>() {
+	    	public Boolean apply(WebDriver driver) {
+	            WebElement el = driver.findElement(locator);
+	            return el != null;
+	        }
+	    };
+	}
+	
+//	private static ExpectedCondition<Boolean> elementsFound(final By locator) {
 //	    return new ExpectedCondition<Boolean>() {
-//	        public Boolean apply(WebDriver driver) {
-//	            WebElement el = driver.findElement(locator);
-//	            el.click();
-//	            return true;
+//	    	public Boolean apply(WebDriver driver) {
+//	    		List<WebElement> el = driver.findElements(locator);
+//	            return el != null;
 //	        }
 //	    };
 //	}
-	
-	
 	
 }
