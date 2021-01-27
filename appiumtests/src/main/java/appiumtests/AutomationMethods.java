@@ -86,6 +86,11 @@ public class AutomationMethods extends Methods {
 		click(IN_PLAYER_SPN);
 		clickOneIndex(PLAYER_NAME_LISTING_ID, 1);
 		click(SUBMIT_BTN_ID);
+		
+		
+		
+		
+		
 		click(CREATE_ACCOUNT_ID);
 		signup();
 		click(SUBMIT_BTN_ID);
