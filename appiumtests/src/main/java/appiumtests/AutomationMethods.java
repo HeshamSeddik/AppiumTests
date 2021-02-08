@@ -13,13 +13,13 @@ public class AutomationMethods extends Methods {
 	}
 	
 	public static void signup() {
-		int randomNumber = rng(100000);
+		int randomNumber = randomNumberGenerator(100000);
 		fillIn(ET_USERNAME_ID, "Etch" + randomNumber);
 		fillIn(ET_EMAIL_ID,"EtchAutomation"+ randomNumber +"@fanzword.com");
 		fillIn(ET_PASSWORD_ID, pw);
 		fillIn(ET_CONFIRM_PASSWORD_ID, pw);
 		click(TV_COUNTRY_ID);
-		clickOneIndex(TV_COUNTRY_NAME_ID, rng(7));
+		clickOneIndex(TV_COUNTRY_NAME_ID, randomNumberGenerator(7));
 		click(CREATE_ACCOUNT_ID);
 	}
 	
@@ -58,8 +58,8 @@ public class AutomationMethods extends Methods {
 	
 	public static void predictScore() {
 		click(LL_PREDICT_SCORE_ID);
-		fillIn(HOME_TEAM_SCORE_ID, Integer.toString(rng(9)));
-		fillIn(AWAY_TEAM_SCORE_ID, Integer.toString(rng(9)));
+		fillIn(HOME_TEAM_SCORE_ID, Integer.toString(randomNumberGenerator(9)));
+		fillIn(AWAY_TEAM_SCORE_ID, Integer.toString(randomNumberGenerator(9)));
 		click(SAVE_ID);
 	}
 	
@@ -86,11 +86,6 @@ public class AutomationMethods extends Methods {
 		click(IN_PLAYER_SPN);
 		clickOneIndex(PLAYER_NAME_LISTING_ID, 1);
 		click(SUBMIT_BTN_ID);
-		
-		
-		
-		
-		
 		click(CREATE_ACCOUNT_ID);
 		signup();
 		click(SUBMIT_BTN_ID);

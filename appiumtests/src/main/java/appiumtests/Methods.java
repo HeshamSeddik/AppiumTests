@@ -8,8 +8,10 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.functions.ExpectedCondition;
@@ -20,6 +22,13 @@ public class Methods {
 	public static WebDriverWait wait;
 	public static final String BASE_VIEW_ID = "com.fanzword.staging:id/";
 	
+	public static final String NAV_MATCHES_TAB = "item_nav_matches";
+	public static final String NAV_RANKINGS_TAB = "item_nav_rankings";
+	public static final String NAV_STATISTICS_TAB = "item_nav_statistics";
+	public static final String NAV_PROFILE_TAB = "item_nav_favorites";
+	public static final String LIVE_BTN = "btn_live";
+	public static final String CALENDAR_BTN = "btn_calender";
+	public static final String DRAWER_BTN = "btn_drawer";
 	public static final String MATCH_ID = "ll_match";
 	public static final String RATE_PLAYER_ID = "iv_rate_player";
 	public static final String RATE_PLAYER_BTN_ID = "btn_rate_player";
@@ -99,10 +108,33 @@ public class Methods {
 		}
 	}
 	
-	public static int rng(int range) {
+	public static void assertElement(String id) {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(BASE_VIEW_ID+id))).isDisplayed();
+		
+	}
+	
+	public static void assertElementText(String description) {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.AccessibilityId(description))).isDisplayed();
+		
+	}
+	
+	public static void assertIsSelected(String description) {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.AccessibilityId(description))).isSelected();
+		
+	}
+	
+//	public static boolean assertPageTitle(String id) {
+//		String x = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(BASE_VIEW_ID + "tv_title"))).getText();
+//		boolean y = x.trim() == id;
+//		System.out.println(y);
+//		return wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(BASE_VIEW_ID + "tv_title"))).getText() == id;
+//	}
+	
+	public static int randomNumberGenerator(int range) {
 		Random randomGenerator = new Random();
 		return randomGenerator.nextInt(range);
 	}
+	
 	
 	public static void delay(int secs) {
 		try {

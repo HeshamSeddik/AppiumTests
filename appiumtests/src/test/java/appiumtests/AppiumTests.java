@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
@@ -19,10 +18,15 @@ public class AppiumTests extends AutomationMethods{
 	public static void initialization() throws Exception {
 		DesiredCapabilities cap = new DesiredCapabilities();
 		
-		cap.setCapability("deviceName", "Lenovo");
-		cap.setCapability("udid", "f6a8d454");
+		cap.setCapability("deviceName", "Android Emulator");
+		cap.setCapability("udid", "emulator-5554");
 		cap.setCapability("platformName", "Android");
-		cap.setCapability("platformVersion", "7.0");
+		cap.setCapability("platformVersion", "10");
+		
+//		cap.setCapability("deviceName", "Lenovo");
+//		cap.setCapability("udid", "f6a8d454");
+//		cap.setCapability("platformName", "Android");
+//		cap.setCapability("platformVersion", "7.0");
 		cap.setCapability("appPackage", "com.fanzword.staging");
 		cap.setCapability("appActivity", "com.fanzword.ui.activities.MainActivity");
 		
@@ -89,6 +93,7 @@ public class AppiumTests extends AutomationMethods{
 		driver.startActivity(new Activity("com.fanzword.staging", "com.fanzword.ui.activities.MainActivity"));
 		logout();
 	}
+	
 	
 	
 }
