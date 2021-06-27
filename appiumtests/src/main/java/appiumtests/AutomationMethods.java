@@ -95,4 +95,9 @@ public class AutomationMethods extends Methods {
 		click(SUBMIT_BTN_ID);
 	}
 	
+	public static void backToMainScreen() {
+		while(assertElementBool(BACK_BTN_ID)) {
+			click(BACK_BTN_ID);
+		}
+	}
 }

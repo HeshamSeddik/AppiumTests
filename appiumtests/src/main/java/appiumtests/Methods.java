@@ -14,6 +14,8 @@ import org.testng.Assert;
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
+import static io.appium.java_client.touch.LongPressOptions.*;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.functions.ExpectedCondition;
 
@@ -60,7 +62,8 @@ public class Methods {
 	public static final String ET_PASSWORD_ID = "et_password";
 	public static final String ET_EMAIL_ID = "et_email";
 	public static final String ET_USERNAME_ID = "et_username";
-	
+	public static final String BACK_BTN_ID = "btn_back";
+	public static final String DAYS_BAR_YESTERDAY = "//android.widget.TextView[@text = 'Yesterday']";
 	public static final String TOAST_XPATH = "//android.widget.Toast[1]";
 	
 	public static final String SUCCESSFUL_RECOMMENDATION = "Substitution submitted successfully";
@@ -90,8 +93,15 @@ public class Methods {
 	}
 	
 	public static void selectMatch(int index) {
-		clickOneIndex(MATCH_ID, index);
+		if(assertElementBool(MATCH_ID)) {
+			clickOneIndex(MATCH_ID, index);
+		}
+		else {
+			driver.findElementByXPath(DAYS_BAR_YESTERDAY).click();
+			clickOneIndex(MATCH_ID, index);
+		}
 	}
+	
 	
 	public static List<MobileElement> listing(String id) {
 //		System.out.println("Trying to retrive the List");
@@ -123,17 +133,24 @@ public class Methods {
 	
 	public static void assertElement(String id) {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(BASE_VIEW_ID+id))).isDisplayed();
+	}
+	
+	public static boolean assertElementBool(String id) {
+
+		boolean elementVisibility = false;
+		if(driver.findElementsById(BASE_VIEW_ID+id).size() > 0 ) {
+			elementVisibility = true;
+		}
 		
+		return elementVisibility;
 	}
 	
 	public static void assertElementText(String description) {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.AccessibilityId(description))).isDisplayed();
-		
 	}
 	
 	public static void assertIsSelected(String description) {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.AccessibilityId(description))).isSelected();
-		
 	}
 	
 	public static boolean assertPageTitle(String id) {
@@ -166,8 +183,6 @@ public class Methods {
 			e.printStackTrace();
 		}
 	}
-	
-	
 	
 	private static ExpectedCondition<Boolean> elementFound(final By locator) {
 	    return new ExpectedCondition<Boolean>() {
