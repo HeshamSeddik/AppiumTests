@@ -58,48 +58,48 @@ public class AppiumTests extends AutomationMethods{
 		selectMatch(0);
 		ratePlayer();
 	}
-//	
-//	@Test (priority = 1)
-//	public static void recommendSubTestcase() {
-//		userGuide();
-//		signin();
-//		selectMatch(0);
-//		recommendSub();
-//		assertToastMessage(SUCCESSFUL_RECOMMENDATION);
-//	}
-//	
-//	@Test (priority = 2)
-//	public static void predictScoreTestcase() {
-//		userGuide();
-//		signin();
-//		selectMatch(0);
-//		predictScore();
-//	}
-//	
-//	@Test (priority = 3)
-//	public static void guestPredictScoreTestcase() {
-//		userGuide();
-//		guestLogin();
-//		selectMatch(0);
-//		guestPredictScore();
-//	}
-//	
-//	@Test (priority = 4)
-//	public static void guestRatePlayerTestcase() {
-//		userGuide();
-//		guestLogin();
-//		selectMatch(0);
-//		guestRatePlayer();
-//	}
-//	
-//	@Test (priority = 5)
-//	public static void guestRecommendSubTestcase() {
-//		userGuide();
-//		guestLogin();
-//		selectMatch(0);
-//		guestRecommendSub();
-//		
-//	}
+	
+	@Test (priority = 1)
+	public static void recommendSubTestcase() {
+		userGuide();
+		signin();
+		selectMatch(0);
+		recommendSub();
+		assertToastMessage(SUCCESSFUL_RECOMMENDATION);
+	}
+	
+	@Test (priority = 2)
+	public static void predictScoreTestcase() {
+		userGuide();
+		signin();
+		selectMatch(0);
+		predictScore();
+	}
+	
+	@Test (priority = 3)
+	public static void guestPredictScoreTestcase() {
+		userGuide();
+		guestLogin();
+		selectMatch(0);
+		guestPredictScore();
+	}
+	
+	@Test (priority = 4)
+	public static void guestRatePlayerTestcase() {
+		userGuide();
+		guestLogin();
+		selectMatch(0);
+		guestRatePlayer();
+	}
+	
+	@Test (priority = 5)
+	public static void guestRecommendSubTestcase() {
+		userGuide();
+		guestLogin();
+		selectMatch(0);
+		guestRecommendSub();
+		
+	}
 	
 	@AfterMethod
 	public static void betweenTests() {
