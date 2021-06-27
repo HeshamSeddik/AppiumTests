@@ -18,15 +18,21 @@ public class AppiumTests extends AutomationMethods{
 	public static void initialization() throws Exception {
 		DesiredCapabilities cap = new DesiredCapabilities();
 		
-		cap.setCapability("deviceName", "Android Emulator");
-		cap.setCapability("udid", "emulator-5554");
+//		cap.setCapability("deviceName", "Android Emulator");
+//		cap.setCapability("udid", "emulator-5554");
+//		cap.setCapability("platformName", "Android");
+//		cap.setCapability("platformVersion", "10");
+		
+		cap.setCapability("deviceName", "Galaxy J7 (2016)");
+		cap.setCapability("udid", "52034a51fc3a83fb");
 		cap.setCapability("platformName", "Android");
-		cap.setCapability("platformVersion", "10");
+		cap.setCapability("platformVersion", "8.1.0");
 		
 //		cap.setCapability("deviceName", "Lenovo");
 //		cap.setCapability("udid", "f6a8d454");
 //		cap.setCapability("platformName", "Android");
 //		cap.setCapability("platformVersion", "7.0");
+		
 		cap.setCapability("appPackage", "com.fanzword.staging");
 		cap.setCapability("appActivity", "com.fanzword.ui.activities.MainActivity");
 		
@@ -47,6 +53,7 @@ public class AppiumTests extends AutomationMethods{
 	
 	@Test (priority = 0)
 	public static void ratePlayerTestcase() {
+		
 		signin();
 		selectMatch(0);
 		ratePlayer();

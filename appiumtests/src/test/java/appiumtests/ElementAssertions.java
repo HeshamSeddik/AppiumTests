@@ -1,10 +1,13 @@
 package appiumtests;
 
+import static org.testng.Assert.assertEquals;
+
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -48,6 +51,13 @@ public class ElementAssertions extends AutomationMethods{
 	
 	@BeforeTest
 	public static void login() {
+		assertElement(ET_EMAIL_ID);
+		assertElement(ET_PASSWORD_ID);
+		assertElement(FORGOT_PASSWORD_BTN_ID);
+		assertElement(SIGN_IN_ID);
+		assertElement(DONT_HAVE_ACCOUNT_ID);
+		assertElement(FACEBOOK_BTN_ID);
+		assertElement(SKIP_ID);
 		signin();
 	}
 	
@@ -66,12 +76,14 @@ public class ElementAssertions extends AutomationMethods{
 //		String x = assertPageTitle("Matches")  ? "Correct title" : "Incorrect title";
 //		System.out.println(x);
 //		assertPageTitle("Matches");
-		assertElementText("Today");
-		assertIsSelected("Today");
-		assertElement(CALENDAR_BTN);
-		assertElement(LIVE_BTN);
-		assertElement(DRAWER_BTN);
-		System.out.println("All main tabs are displayed");
+//		assertElementText("Today");
+//		assertEquals(0, 0);
+		Assert.assertEquals(false, true);
+//		assertIsSelected("Today");
+//		assertElement(CALENDAR_BTN);
+//		assertElement(LIVE_BTN);
+//		assertElement(DRAWER_BTN);
+//		System.out.println("All main tabs are displayed");
 	}
 	
 }

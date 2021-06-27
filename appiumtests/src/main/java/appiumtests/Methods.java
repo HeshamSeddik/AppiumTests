@@ -26,6 +26,9 @@ public class Methods {
 	public static final String NAV_RANKINGS_TAB = "item_nav_rankings";
 	public static final String NAV_STATISTICS_TAB = "item_nav_statistics";
 	public static final String NAV_PROFILE_TAB = "item_nav_favorites";
+	public static final String DONT_HAVE_ACCOUNT_ID = "tv_dont_have_account";
+	public static final String FACEBOOK_BTN_ID = "btn_facebook";
+	public static final String FORGOT_PASSWORD_BTN_ID = "tv_forgot_password";	
 	public static final String LIVE_BTN = "btn_live";
 	public static final String CALENDAR_BTN = "btn_calender";
 	public static final String DRAWER_BTN = "btn_drawer";
@@ -34,7 +37,7 @@ public class Methods {
 	public static final String RATE_PLAYER_BTN_ID = "btn_rate_player";
 	public static final String RATE_PLAYER_EIGHT_BTN = "tv_eight";
 	public static final String RECOMMEND_A_SUB_ID = "iv_recommend_sub";
-	public static final String OUT_PLAYER_SPN = "spn_player";
+	public static final String OUT_PLAYER_SPN_ID = "spn_player";
 	public static final String IN_PLAYER_SPN = "spn_backup_player";
 	public static final String PLAYER_NAME_LISTING_ID = "tv_player_name";
 	public static final String SUBMIT_BTN_ID = "btn_submit";
@@ -123,12 +126,12 @@ public class Methods {
 		
 	}
 	
-//	public static boolean assertPageTitle(String id) {
-//		String x = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(BASE_VIEW_ID + "tv_title"))).getText();
-//		boolean y = x.trim() == id;
-//		System.out.println(y);
-//		return wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(BASE_VIEW_ID + "tv_title"))).getText() == id;
-//	}
+	public static boolean assertPageTitle(String id) {
+		String x = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(BASE_VIEW_ID + "tv_title"))).getText();
+		boolean y = x.trim() == id;
+		System.out.println(y);
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(BASE_VIEW_ID + "tv_title"))).getText() == id;
+	}
 	
 	public static int randomNumberGenerator(int range) {
 		Random randomGenerator = new Random();

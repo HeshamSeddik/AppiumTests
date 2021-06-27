@@ -3,13 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="appiumtests.ElementAssertions">
+      <class name="appiumtests.AppiumTests">
         <methods>
-          <include name="login"/>
+          <include name="guestRecommendSubTestcase"/>
+          <include name="guestRatePlayerTestcase"/>
+          <include name="betweenTests"/>
+          <include name="guestPredictScoreTestcase"/>
+          <include name="ratePlayerTestcase"/>
           <include name="initialization"/>
-          <include name="assetNavBar"/>
+          <include name="predictScoreTestcase"/>
+          <include name="recommendSubTestcase"/>
         </methods>
-      </class> <!-- appiumtests.ElementAssertions -->
+      </class> <!-- appiumtests.AppiumTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

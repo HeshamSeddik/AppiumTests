@@ -5,6 +5,10 @@ import io.appium.java_client.touch.offset.PointOption;
 
 public class AutomationMethods extends Methods {
 	
+	public static void userGuide(){
+		
+	}
+	
 	public static void signin(){		
 		fillIn(ET_EMAIL_ID, email);
 		fillIn(ET_PASSWORD_ID, pw);
@@ -49,7 +53,7 @@ public class AutomationMethods extends Methods {
 	
 	public static void recommendSub() {
 		click(RECOMMEND_A_SUB_ID);
-		click(OUT_PLAYER_SPN);
+		click(OUT_PLAYER_SPN_ID);
 		clickOneIndex(PLAYER_NAME_LISTING_ID, 1);
 		click(IN_PLAYER_SPN);
 		clickOneIndex(PLAYER_NAME_LISTING_ID, 1);
@@ -81,7 +85,7 @@ public class AutomationMethods extends Methods {
 	
 	public static void guestRecommendSub() {
 		click(RECOMMEND_A_SUB_ID);
-		click(OUT_PLAYER_SPN);
+		click(OUT_PLAYER_SPN_ID);
 		clickOneIndex(PLAYER_NAME_LISTING_ID, 1);
 		click(IN_PLAYER_SPN);
 		clickOneIndex(PLAYER_NAME_LISTING_ID, 1);
