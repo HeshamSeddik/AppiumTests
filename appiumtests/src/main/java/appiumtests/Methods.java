@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
@@ -22,6 +23,7 @@ public class Methods {
 	public static WebDriverWait wait;
 	public static final String BASE_VIEW_ID = "com.fanzword.staging:id/";
 	
+	public static final String GET_STARTED_BTN = "btn_get_started";
 	public static final String NAV_MATCHES_TAB = "item_nav_matches";
 	public static final String NAV_RANKINGS_TAB = "item_nav_rankings";
 	public static final String NAV_STATISTICS_TAB = "item_nav_statistics";
@@ -35,7 +37,6 @@ public class Methods {
 	public static final String MATCH_ID = "ll_match";
 	public static final String RATE_PLAYER_ID = "iv_rate_player";
 	public static final String RATE_PLAYER_BTN_ID = "btn_rate_player";
-	public static final String RATE_PLAYER_EIGHT_BTN = "tv_eight";
 	public static final String RECOMMEND_A_SUB_ID = "iv_recommend_sub";
 	public static final String OUT_PLAYER_SPN_ID = "spn_player";
 	public static final String IN_PLAYER_SPN = "spn_backup_player";
@@ -49,7 +50,7 @@ public class Methods {
 	public static final String LL_PREDICT_SCORE_ID = "ll_predict_score";
 	public static final String ACTV_FAVORITE_TEAM_ID = "actv_favorite_team";
 	public static final String CONTINUE_ID = "btn_continue";
-	public static final String SKIP_ID = "tv_skip";
+	public static final String SKIP_ID = "btn_skip";
 	public static final String SAVE_ID = "btn_save";
 	public static final String CREATE_ACCOUNT_ID = "btn_create_account";
 	public static final String SIGN_IN_ID = "btn_sign_in";
@@ -60,7 +61,11 @@ public class Methods {
 	public static final String ET_EMAIL_ID = "et_email";
 	public static final String ET_USERNAME_ID = "et_username";
 	
-	public static String email = "hseddik@identity-solutions.org";
+	public static final String TOAST_XPATH = "//android.widget.Toast[1]";
+	
+	public static final String SUCCESSFUL_RECOMMENDATION = "Substitution submitted successfully";
+	
+	public static String email = "etch@fanzword.com";
 	public static String pw = "12345678";
 	
 	public static void clickOneIndex(String id, int index) {
@@ -75,7 +80,6 @@ public class Methods {
 	}
 	
 	public static void click(String id) {
-//		wait.until(elementFound(By.id(BASE_VIEW_ID + id)));
 		find(id).click();
 		return;
 	}
@@ -84,20 +88,20 @@ public class Methods {
 		find(id).sendKeys(text);
 		return;
 	}
+	
 	public static void selectMatch(int index) {
 		clickOneIndex(MATCH_ID, index);
 	}
 	
 	public static List<MobileElement> listing(String id) {
-		System.out.println("Trying to retrive the List");
+//		System.out.println("Trying to retrive the List");
 //		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(BASE_VIEW_ID + id)));
 		wait.until(elementFound(By.id(BASE_VIEW_ID + id)));
 		List<MobileElement> parent = driver.findElements(By.id(BASE_VIEW_ID + id));
-		System.out.println("List retrieved...");
+//		System.out.println("List retrieved...");
 		System.out.println(parent.size());
 		return parent;
 	}
-	
 	
 	public static void clickIndex(List<MobileElement> p, int index) {
 		p.get(index).click();
@@ -109,6 +113,12 @@ public class Methods {
 		for(;i<=j;i++) {
 			clickIndex(elementList, i);
 		}
+	}
+	
+	public static void randomPlayerRating(String index) {
+		System.out.println("Player rating "+index);
+		driver.findElementByXPath("//android.widget.TextView[@text = '"+index+"']").click();
+		
 	}
 	
 	public static void assertElement(String id) {
@@ -132,6 +142,15 @@ public class Methods {
 		System.out.println(y);
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(BASE_VIEW_ID + "tv_title"))).getText() == id;
 	}
+	
+	public static void assertToastMessage(String expected) {
+		
+		String toastMessage = driver.findElementByXPath(TOAST_XPATH).getAttribute("name");
+		Assert.assertEquals(expected, toastMessage);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.Toast[1]").getAttribute("name")));
+				
+	}
+	
 	
 	public static int randomNumberGenerator(int range) {
 		Random randomGenerator = new Random();

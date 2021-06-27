@@ -18,15 +18,15 @@ public class AppiumTests extends AutomationMethods{
 	public static void initialization() throws Exception {
 		DesiredCapabilities cap = new DesiredCapabilities();
 		
-//		cap.setCapability("deviceName", "Android Emulator");
-//		cap.setCapability("udid", "emulator-5554");
-//		cap.setCapability("platformName", "Android");
-//		cap.setCapability("platformVersion", "10");
-		
-		cap.setCapability("deviceName", "Galaxy J7 (2016)");
-		cap.setCapability("udid", "52034a51fc3a83fb");
+		cap.setCapability("deviceName", "EtchEmulator");
+		cap.setCapability("udid", "emulator-5554");
 		cap.setCapability("platformName", "Android");
-		cap.setCapability("platformVersion", "8.1.0");
+		cap.setCapability("platformVersion", "10");
+		
+//		cap.setCapability("deviceName", "Galaxy J7 (2016)");
+//		cap.setCapability("udid", "52034a51fc3a83fb");
+//		cap.setCapability("platformName", "Android");
+//		cap.setCapability("platformVersion", "8.1.0");
 		
 //		cap.setCapability("deviceName", "Lenovo");
 //		cap.setCapability("udid", "f6a8d454");
@@ -53,46 +53,53 @@ public class AppiumTests extends AutomationMethods{
 	
 	@Test (priority = 0)
 	public static void ratePlayerTestcase() {
-		
+		userGuide();
 		signin();
 		selectMatch(0);
 		ratePlayer();
 	}
-	
-	@Test (priority = 1)
-	public static void recommendSubTestcase() {
-		signin();
-		selectMatch(0);
-		recommendSub();
-	}
-	
-	@Test (priority = 2)
-	public static void predictScoreTestcase() {
-		signin();
-		selectMatch(0);
-		predictScore();
-	}
-	
-	@Test (priority = 3)
-	public static void guestPredictScoreTestcase() {
-		guestLogin();
-		selectMatch(0);
-		guestPredictScore();
-	}
-	
-	@Test (priority = 4)
-	public static void guestRatePlayerTestcase() {
-		guestLogin();
-		selectMatch(0);
-		guestRatePlayer();
-	}
-	
-	@Test (priority = 5)
-	public static void guestRecommendSubTestcase() {
-		guestLogin();
-		selectMatch(0);
-		guestRecommendSub();
-	}
+//	
+//	@Test (priority = 1)
+//	public static void recommendSubTestcase() {
+//		userGuide();
+//		signin();
+//		selectMatch(0);
+//		recommendSub();
+//		assertToastMessage(SUCCESSFUL_RECOMMENDATION);
+//	}
+//	
+//	@Test (priority = 2)
+//	public static void predictScoreTestcase() {
+//		userGuide();
+//		signin();
+//		selectMatch(0);
+//		predictScore();
+//	}
+//	
+//	@Test (priority = 3)
+//	public static void guestPredictScoreTestcase() {
+//		userGuide();
+//		guestLogin();
+//		selectMatch(0);
+//		guestPredictScore();
+//	}
+//	
+//	@Test (priority = 4)
+//	public static void guestRatePlayerTestcase() {
+//		userGuide();
+//		guestLogin();
+//		selectMatch(0);
+//		guestRatePlayer();
+//	}
+//	
+//	@Test (priority = 5)
+//	public static void guestRecommendSubTestcase() {
+//		userGuide();
+//		guestLogin();
+//		selectMatch(0);
+//		guestRecommendSub();
+//		
+//	}
 	
 	@AfterMethod
 	public static void betweenTests() {

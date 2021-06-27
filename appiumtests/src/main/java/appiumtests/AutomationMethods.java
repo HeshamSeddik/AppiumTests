@@ -6,7 +6,7 @@ import io.appium.java_client.touch.offset.PointOption;
 public class AutomationMethods extends Methods {
 	
 	public static void userGuide(){
-		
+		click(GET_STARTED_BTN);
 	}
 	
 	public static void signin(){		
@@ -36,19 +36,19 @@ public class AutomationMethods extends Methods {
 	public static void guestLogin() {
 		click(SKIP_ID);
 		click(CONTINUE_ID);
-		clickIndexRange("sw_league", 1, 9);
+		clickOneIndex("sw_league", 0);
 		click(SAVE_ID);
 		click(ACTV_FAVORITE_TEAM_ID);
-		fillIn(ACTV_FAVORITE_TEAM_ID,"Manchester" );
+		fillIn(ACTV_FAVORITE_TEAM_ID,"Ma" );
 		delay(2);
-		(new TouchAction(driver)).tap(PointOption.point(503, 871)).perform();
+		(new TouchAction(driver)).tap(PointOption.point(309, 534)).perform();
 		click(SAVE_ID);
 	}
 	
 	public static void ratePlayer() {
 		click(RATE_PLAYER_ID);
 		click(RATE_PLAYER_BTN_ID);
-		click(RATE_PLAYER_EIGHT_BTN);
+		randomPlayerRating(Integer.toString(randomNumberGenerator(9)+1));
 	}
 	
 	public static void recommendSub() {
@@ -80,7 +80,7 @@ public class AutomationMethods extends Methods {
 		click(CREATE_ACCOUNT_ID);
 		signup();
 		click(RATE_PLAYER_BTN_ID);
-		click(RATE_PLAYER_EIGHT_BTN);
+		randomPlayerRating(Integer.toString(randomNumberGenerator(9)+1));
 	}
 	
 	public static void guestRecommendSub() {
