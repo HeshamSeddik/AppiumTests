@@ -51,6 +51,11 @@ public class AutomationMethods extends Methods {
 		randomPlayerRating(Integer.toString(randomNumberGenerator(9)+1));
 	}
 	
+	public static void rateGoal() {
+		click(RATE_GOAL_ID);
+		randomGoalRating();
+	}
+	
 	public static void recommendSub() {
 		click(RECOMMEND_A_SUB_ID);
 		click(OUT_PLAYER_SPN_ID);
@@ -93,6 +98,15 @@ public class AutomationMethods extends Methods {
 		click(CREATE_ACCOUNT_ID);
 		signup();
 		click(SUBMIT_BTN_ID);
+	}
+	
+	public static void guestRateGoal() {
+		click(RATE_GOAL_ID);
+		click(GOAL_RATING_SLIDER_ID);
+		click(CREATE_ACCOUNT_ID);
+		signup();
+		click(GOAL_RATING_SLIDER_ID);
+		randomGoalRating();
 	}
 	
 	public static void backToMainScreen() {

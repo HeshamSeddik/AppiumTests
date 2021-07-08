@@ -60,6 +60,14 @@ public class AppiumTests extends AutomationMethods{
 	}
 	
 	@Test (priority = 1)
+	public static void rateGoalTestcase() {
+		userGuide();
+		signin();
+		selectMatch(0);
+		rateGoal();
+	}
+	
+	@Test (priority = 2)
 	public static void recommendSubTestcase() {
 		userGuide();
 		signin();
@@ -68,20 +76,12 @@ public class AppiumTests extends AutomationMethods{
 		assertToastMessage(SUCCESSFUL_RECOMMENDATION);
 	}
 	
-	@Test (priority = 2)
+	@Test (priority = 3)
 	public static void predictScoreTestcase() {
 		userGuide();
 		signin();
 		selectMatch(0);
 		predictScore();
-	}
-	
-	@Test (priority = 3)
-	public static void guestPredictScoreTestcase() {
-		userGuide();
-		guestLogin();
-		selectMatch(0);
-		guestPredictScore();
 	}
 	
 	@Test (priority = 4)
@@ -93,6 +93,14 @@ public class AppiumTests extends AutomationMethods{
 	}
 	
 	@Test (priority = 5)
+	public static void guestRateGoalTestcase() {
+		userGuide();
+		guestLogin();
+		selectMatch(0);
+		guestRateGoal();
+	}
+	
+	@Test (priority = 6)
 	public static void guestRecommendSubTestcase() {
 		userGuide();
 		guestLogin();
@@ -101,20 +109,21 @@ public class AppiumTests extends AutomationMethods{
 		
 	}
 	
-	public static void rateGoalTestcase() {
+	@Test (priority = 7)
+	public static void guestPredictScoreTestcase() {
 		userGuide();
-		signin();
+		guestLogin();
 		selectMatch(0);
-		
+		guestPredictScore();
 	}
-	
 	
 	@AfterMethod
 	public static void betweenTests() {
 		delay(2);
 		backToMainScreen();
-//		driver.startActivity(new Activity("com.fanzword.staging", "com.fanzword.ui.activities.MainActivity"));
 		logout();
+		
+//		driver.startActivity(new Activity("com.fanzword.staging", "com.fanzword.ui.activities.MainActivity"));
 	}
 	
 	

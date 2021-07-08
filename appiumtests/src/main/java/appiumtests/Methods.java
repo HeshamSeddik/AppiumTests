@@ -18,6 +18,7 @@ import io.appium.java_client.TouchAction;
 import static io.appium.java_client.touch.LongPressOptions.*;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.functions.ExpectedCondition;
+import io.appium.java_client.touch.offset.PointOption;
 
 public class Methods {
 	
@@ -65,9 +66,10 @@ public class Methods {
 	public static final String BACK_BTN_ID = "btn_back";
 	public static final String DAYS_BAR_YESTERDAY = "//android.widget.TextView[@text = 'Yesterday']";
 	public static final String TOAST_XPATH = "//android.widget.Toast[1]";
-	
+	public static final String RATE_GOAL_ID = "iv_rate_goal";
 	public static final String SUCCESSFUL_RECOMMENDATION = "Substitution submitted successfully";
-	
+	public static final String GOAL_RATING_SLIDER_ID = "sb_player_rate";
+	public static final String USER_GOAL_RATING_ID = "tv_user_rate";
 	public static String email = "etch@fanzword.com";
 	public static String pw = "12345678";
 	
@@ -183,6 +185,31 @@ public class Methods {
 			e.printStackTrace();
 		}
 	}
+	
+	public static void randomGoalRating() {
+		
+		
+		
+		WebElement slider = driver.findElementById(BASE_VIEW_ID + GOAL_RATING_SLIDER_ID);
+		int xAxisStartPoint = slider.getLocation().getX();
+		int xAxisEndPoint = xAxisStartPoint + slider.getSize().getWidth();
+		int yAxis = slider.getLocation().getY();
+		int moveTo = randomNumberGenerator(slider.getSize().getWidth()-1);
+		System.out.println(xAxisStartPoint + "\n" + xAxisEndPoint  + "\n" + yAxis);
+		String initialValue = driver.findElementById(BASE_VIEW_ID + USER_GOAL_RATING_ID).getText();
+		TouchAction t = new TouchAction(driver);
+		t.longPress(PointOption.point(xAxisStartPoint+20,yAxis)).moveTo(PointOption.point(moveTo,yAxis)).release().perform();
+		String endValue = driver.findElementById("com.fanzword.staging:id/tv_user_rate").getText();
+		
+		if(initialValue.equalsIgnoreCase(endValue)) {
+			System.out.println("initialValue = "+ initialValue + "\nendValue = "+ endValue + "\nUnsuccessful goal rating");
+		}
+		else {
+			System.out.println("initialValue = "+ initialValue + "\nendValue = "+ endValue + "\nSuccessful goal rating");
+		}
+
+	}
+	
 	
 	private static ExpectedCondition<Boolean> elementFound(final By locator) {
 	    return new ExpectedCondition<Boolean>() {
