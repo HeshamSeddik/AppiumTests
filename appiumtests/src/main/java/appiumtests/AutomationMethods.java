@@ -72,6 +72,35 @@ public class AutomationMethods extends Methods {
 		click(SAVE_ID);
 	}
 	
+	public static void createPost() {
+		click(MATCH_DISCUSSIONS_ID);
+		click(CREATE_POST_ID);
+		click(CHOOSE_TOPIC_ID);
+		click(EVENT_ID);
+		fillIn(POST_TEXT_ID, postText);
+		click(GIPHY_BTN_ID);
+		delay(2);
+		selectClassName(GIF_CLASS_NAME);
+		click(CREATE_POST_ID);
+		assertText(SUBMITTED_POST_TEXT_ID, postText);
+	}
+	
+	public static void guestCreatePost() {
+		click(MATCH_DISCUSSIONS_ID);
+		click(CREATE_POST_ID);
+		click(CREATE_ACCOUNT_ID);
+		signup();
+		click(CREATE_POST_ID);
+		click(CHOOSE_TOPIC_ID);
+		click(EVENT_ID);
+		fillIn(POST_TEXT_ID, postText);
+		click(GIPHY_BTN_ID);
+		delay(2);
+		selectClassName(GIF_CLASS_NAME);
+		click(CREATE_POST_ID);
+		assertText(SUBMITTED_POST_TEXT_ID, postText);
+	}
+	
 	public static void guestPredictScore() {
 		click(LL_PREDICT_SCORE_ID);
 		click(CREATE_ACCOUNT_ID);
@@ -108,6 +137,7 @@ public class AutomationMethods extends Methods {
 		click(GOAL_RATING_SLIDER_ID);
 		randomGoalRating();
 	}
+	
 	
 	public static void backToMainScreen() {
 		while(assertElementBool(BACK_BTN_ID)) {

@@ -1,80 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="259782" started-at="2021-07-08T17:26:03Z" finished-at="2021-07-08T17:30:22Z">
+  <suite name="Default suite" duration-ms="30112" started-at="2021-07-10T23:28:25Z" finished-at="2021-07-10T23:28:55Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="259782" started-at="2021-07-08T17:26:03Z" finished-at="2021-07-08T17:30:22Z">
+    <test name="Default test" duration-ms="30112" started-at="2021-07-10T23:28:25Z" finished-at="2021-07-10T23:28:55Z">
       <class name="appiumtests.AppiumTests">
-        <test-method status="PASS" signature="initialization()[pri:0, instance:appiumtests.AppiumTests@4ac3c60d]" name="initialization" is-config="true" duration-ms="4950" started-at="2021-07-08T17:26:03Z" finished-at="2021-07-08T17:26:07Z">
+        <test-method status="PASS" signature="initialization()[pri:0, instance:appiumtests.AppiumTests@6093dd95]" name="initialization" is-config="true" duration-ms="4994" started-at="2021-07-10T23:28:25Z" finished-at="2021-07-10T23:28:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialization -->
-        <test-method status="PASS" signature="ratePlayerTestcase()[pri:0, instance:appiumtests.AppiumTests@4ac3c60d]" name="ratePlayerTestcase" duration-ms="15794" started-at="2021-07-08T17:26:08Z" finished-at="2021-07-08T17:26:23Z">
+        <test-method status="PASS" signature="beforeTests()[pri:0, instance:appiumtests.AppiumTests@6093dd95]" name="beforeTests" is-config="true" duration-ms="40" started-at="2021-07-10T23:28:30Z" finished-at="2021-07-10T23:28:30Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ratePlayerTestcase -->
-        <test-method status="PASS" signature="betweenTests()[pri:0, instance:appiumtests.AppiumTests@4ac3c60d]" name="betweenTests" is-config="true" duration-ms="10310" started-at="2021-07-08T17:26:23Z" finished-at="2021-07-08T17:26:34Z">
+        </test-method> <!-- beforeTests -->
+        <test-method status="PASS" signature="createPostTestcase()[pri:4, instance:appiumtests.AppiumTests@6093dd95]" name="createPostTestcase" duration-ms="13690" started-at="2021-07-10T23:28:30Z" finished-at="2021-07-10T23:28:44Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- betweenTests -->
-        <test-method status="PASS" signature="rateGoalTestcase()[pri:1, instance:appiumtests.AppiumTests@4ac3c60d]" name="rateGoalTestcase" duration-ms="14256" started-at="2021-07-08T17:26:34Z" finished-at="2021-07-08T17:26:48Z">
+        </test-method> <!-- createPostTestcase -->
+        <test-method status="PASS" signature="afterTests()[pri:0, instance:appiumtests.AppiumTests@6093dd95]" name="afterTests" is-config="true" duration-ms="11375" started-at="2021-07-10T23:28:44Z" finished-at="2021-07-10T23:28:55Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- rateGoalTestcase -->
-        <test-method status="PASS" signature="betweenTests()[pri:0, instance:appiumtests.AppiumTests@4ac3c60d]" name="betweenTests" is-config="true" duration-ms="10732" started-at="2021-07-08T17:26:48Z" finished-at="2021-07-08T17:26:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- betweenTests -->
-        <test-method status="PASS" signature="recommendSubTestcase()[pri:2, instance:appiumtests.AppiumTests@4ac3c60d]" name="recommendSubTestcase" duration-ms="17019" started-at="2021-07-08T17:26:59Z" finished-at="2021-07-08T17:27:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- recommendSubTestcase -->
-        <test-method status="PASS" signature="betweenTests()[pri:0, instance:appiumtests.AppiumTests@4ac3c60d]" name="betweenTests" is-config="true" duration-ms="10745" started-at="2021-07-08T17:27:16Z" finished-at="2021-07-08T17:27:26Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- betweenTests -->
-        <test-method status="PASS" signature="predictScoreTestcase()[pri:3, instance:appiumtests.AppiumTests@4ac3c60d]" name="predictScoreTestcase" duration-ms="14692" started-at="2021-07-08T17:27:26Z" finished-at="2021-07-08T17:27:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- predictScoreTestcase -->
-        <test-method status="PASS" signature="betweenTests()[pri:0, instance:appiumtests.AppiumTests@4ac3c60d]" name="betweenTests" is-config="true" duration-ms="9487" started-at="2021-07-08T17:27:41Z" finished-at="2021-07-08T17:27:51Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- betweenTests -->
-        <test-method status="PASS" signature="guestRatePlayerTestcase()[pri:4, instance:appiumtests.AppiumTests@4ac3c60d]" name="guestRatePlayerTestcase" duration-ms="29752" started-at="2021-07-08T17:27:51Z" finished-at="2021-07-08T17:28:20Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- guestRatePlayerTestcase -->
-        <test-method status="PASS" signature="betweenTests()[pri:0, instance:appiumtests.AppiumTests@4ac3c60d]" name="betweenTests" is-config="true" duration-ms="11682" started-at="2021-07-08T17:28:20Z" finished-at="2021-07-08T17:28:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- betweenTests -->
-        <test-method status="PASS" signature="guestRateGoalTestcase()[pri:5, instance:appiumtests.AppiumTests@4ac3c60d]" name="guestRateGoalTestcase" duration-ms="26967" started-at="2021-07-08T17:28:32Z" finished-at="2021-07-08T17:28:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- guestRateGoalTestcase -->
-        <test-method status="PASS" signature="betweenTests()[pri:0, instance:appiumtests.AppiumTests@4ac3c60d]" name="betweenTests" is-config="true" duration-ms="10696" started-at="2021-07-08T17:28:59Z" finished-at="2021-07-08T17:29:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- betweenTests -->
-        <test-method status="PASS" signature="guestRecommendSubTestcase()[pri:6, instance:appiumtests.AppiumTests@4ac3c60d]" name="guestRecommendSubTestcase" duration-ms="26470" started-at="2021-07-08T17:29:10Z" finished-at="2021-07-08T17:29:36Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- guestRecommendSubTestcase -->
-        <test-method status="PASS" signature="betweenTests()[pri:0, instance:appiumtests.AppiumTests@4ac3c60d]" name="betweenTests" is-config="true" duration-ms="10614" started-at="2021-07-08T17:29:36Z" finished-at="2021-07-08T17:29:47Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- betweenTests -->
-        <test-method status="PASS" signature="guestPredictScoreTestcase()[pri:7, instance:appiumtests.AppiumTests@4ac3c60d]" name="guestPredictScoreTestcase" duration-ms="26141" started-at="2021-07-08T17:29:47Z" finished-at="2021-07-08T17:30:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- guestPredictScoreTestcase -->
-        <test-method status="PASS" signature="betweenTests()[pri:0, instance:appiumtests.AppiumTests@4ac3c60d]" name="betweenTests" is-config="true" duration-ms="9452" started-at="2021-07-08T17:30:13Z" finished-at="2021-07-08T17:30:22Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- betweenTests -->
+        </test-method> <!-- afterTests -->
       </class> <!-- appiumtests.AppiumTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

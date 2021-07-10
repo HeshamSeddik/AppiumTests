@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import io.appium.java_client.MobileElement;
@@ -85,6 +86,14 @@ public class AppiumTests extends AutomationMethods{
 	}
 	
 	@Test (priority = 4)
+	public static void createPostTestcase() {
+		userGuide();
+		signin();
+		selectMatch(0);
+		createPost();
+	}
+	
+	@Test (priority = 5)
 	public static void guestRatePlayerTestcase() {
 		userGuide();
 		guestLogin();
@@ -92,7 +101,7 @@ public class AppiumTests extends AutomationMethods{
 		guestRatePlayer();
 	}
 	
-	@Test (priority = 5)
+	@Test (priority = 6)
 	public static void guestRateGoalTestcase() {
 		userGuide();
 		guestLogin();
@@ -100,7 +109,7 @@ public class AppiumTests extends AutomationMethods{
 		guestRateGoal();
 	}
 	
-	@Test (priority = 6)
+	@Test (priority = 7)
 	public static void guestRecommendSubTestcase() {
 		userGuide();
 		guestLogin();
@@ -109,7 +118,7 @@ public class AppiumTests extends AutomationMethods{
 		
 	}
 	
-	@Test (priority = 7)
+	@Test (priority = 8)
 	public static void guestPredictScoreTestcase() {
 		userGuide();
 		guestLogin();
@@ -117,11 +126,30 @@ public class AppiumTests extends AutomationMethods{
 		guestPredictScore();
 	}
 	
+	@Test (priority = 9)
+	public static void guestCreatePostTestcase() {
+		userGuide();
+		guestLogin();
+		selectMatch(0);
+		guestCreatePost();
+	}
+	
+	@BeforeMethod
+	public static void beforeTests() {
+		if(driver.currentActivity().equalsIgnoreCase("com.fanzword.ui.activities.MainActivity")) {
+			return;
+		}else {
+			driver.launchApp();
+		}
+	}
+	
 	@AfterMethod
-	public static void betweenTests() {
+	public static void afterTests() {
 		delay(2);
 		backToMainScreen();
 		logout();
+		delay(1);
+		driver.closeApp();
 		
 //		driver.startActivity(new Activity("com.fanzword.staging", "com.fanzword.ui.activities.MainActivity"));
 	}

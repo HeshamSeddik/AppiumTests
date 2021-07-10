@@ -65,13 +65,27 @@ public class Methods {
 	public static final String ET_USERNAME_ID = "et_username";
 	public static final String BACK_BTN_ID = "btn_back";
 	public static final String DAYS_BAR_YESTERDAY = "//android.widget.TextView[@text = 'Yesterday']";
+	public static final String DAYS_BAR_TOMORROW = "//android.widget.TextView[@text = 'Tomorrow']";
 	public static final String TOAST_XPATH = "//android.widget.Toast[1]";
 	public static final String RATE_GOAL_ID = "iv_rate_goal";
 	public static final String SUCCESSFUL_RECOMMENDATION = "Substitution submitted successfully";
 	public static final String GOAL_RATING_SLIDER_ID = "sb_player_rate";
 	public static final String USER_GOAL_RATING_ID = "tv_user_rate";
+	public static final String MATCH_DISCUSSIONS_ID = "iv_match_discussion";
+	public static final String CREATE_POST_ID = "btn_create_post";
+	public static final String CHOOSE_TOPIC_ID = "rl_choose_topic";
+	public static final String EVENT_ID = "tv_event";
+	public static final String POST_TEXT_ID = "et_your_opinion";
+	public static final String GIPHY_BTN_ID = "btn_choose_giphy";
+	public static final String GIF_CLASS_NAME = "android.widget.ImageView";
+	public static final String SUBMITTED_POST_TEXT_ID = "tv_opinion";
+	
+	public static final String postText = "This is an automated text for testing the create post feature";
+	
+	
 	public static String email = "etch@fanzword.com";
 	public static String pw = "12345678";
+	
 	
 	public static void clickOneIndex(String id, int index) {
 		List<MobileElement> elements = listing(id);
@@ -111,7 +125,7 @@ public class Methods {
 		wait.until(elementFound(By.id(BASE_VIEW_ID + id)));
 		List<MobileElement> parent = driver.findElements(By.id(BASE_VIEW_ID + id));
 //		System.out.println("List retrieved...");
-		System.out.println(parent.size());
+//		System.out.println(parent.size());
 		return parent;
 	}
 	
@@ -133,6 +147,11 @@ public class Methods {
 		
 	}
 	
+	public static void selectClassName(String className) {
+		wait.until(elementFound(By.className(className)));
+		driver.findElements(By.className(className)).get(6).click();
+	}
+	
 	public static void assertElement(String id) {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(BASE_VIEW_ID+id))).isDisplayed();
 	}
@@ -145,6 +164,19 @@ public class Methods {
 		}
 		
 		return elementVisibility;
+	}
+	
+	public static void assertText(String id, String expected) {
+		
+		boolean textAssertion = false;
+		if(driver.findElementById(BASE_VIEW_ID+id).getText().equalsIgnoreCase(expected)) {
+			textAssertion = true;
+		}
+		if(textAssertion) {
+			System.out.println("Success, the submitted text is the same as the actual text");
+		}else {
+			System.out.println("Failure, the submitted text doesn't match the actual text");
+		}
 	}
 	
 	public static void assertElementText(String description) {
@@ -187,8 +219,6 @@ public class Methods {
 	}
 	
 	public static void randomGoalRating() {
-		
-		
 		
 		WebElement slider = driver.findElementById(BASE_VIEW_ID + GOAL_RATING_SLIDER_ID);
 		int xAxisStartPoint = slider.getLocation().getX();

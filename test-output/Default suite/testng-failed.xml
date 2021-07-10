@@ -5,9 +5,10 @@
     <classes>
       <class name="appiumtests.AppiumTests">
         <methods>
-          <include name="guestRateGoalTestcase"/>
-          <include name="betweenTests"/>
+          <include name="createPostTestcase"/>
           <include name="initialization"/>
+          <include name="beforeTests"/>
+          <include name="afterTests"/>
         </methods>
       </class> <!-- appiumtests.AppiumTests -->
     </classes>
