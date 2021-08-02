@@ -47,7 +47,7 @@ public class Methods {
 	public static final String SUBMIT_BTN_ID = "btn_submit";
 	public static final String SANDWITCH_ID = "btn_drawer";
 	public static final String LOGOUT_ID = "tv_logout";
-	public static final String CONFIRM_LOGOUT_ID = "btn_logout";
+	public static final String CONFIRM_LOGOUT_ID = "btn_confirm_dialog_text";
 	public static final String AWAY_TEAM_SCORE_ID = "et_team_away_score";
 	public static final String HOME_TEAM_SCORE_ID = "et_team_home_score";
 	public static final String LL_PREDICT_SCORE_ID = "ll_predict_score";
@@ -113,14 +113,15 @@ public class Methods {
 			clickOneIndex(MATCH_ID, index);
 		}
 		else {
-			driver.findElementByXPath(DAYS_BAR_YESTERDAY).click();
+//			driver.findElementByXPath(DAYS_BAR_YESTERDAY).click();
+			click(LIVE_BTN);
 			clickOneIndex(MATCH_ID, index);
 		}
 	}
 	
 	
-	public static List<MobileElement> listing(String id) {
-//		System.out.println("Trying to retrive the List");
+	public static List<MobileElement> listing(String id) {	
+//		System.out.println("Trying to retrieve the List");
 //		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(BASE_VIEW_ID + id)));
 		wait.until(elementFound(By.id(BASE_VIEW_ID + id)));
 		List<MobileElement> parent = driver.findElements(By.id(BASE_VIEW_ID + id));

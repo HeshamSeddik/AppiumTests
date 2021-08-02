@@ -1,668 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="0" failed="1" skipped="5">
+<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-06-20T21:16:10 EET" name="Default suite" finished-at="2021-06-20T21:16:58 EET" duration-ms="47764">
+  <suite started-at="2021-08-02T18:32:59 EET" name="Default suite" finished-at="2021-08-02T18:39:15 EET" duration-ms="376321">
     <groups>
     </groups>
-    <test started-at="2021-06-20T21:16:10 EET" name="Default test" finished-at="2021-06-20T21:16:58 EET" duration-ms="47764">
+    <test started-at="2021-08-02T18:32:59 EET" name="Default test" finished-at="2021-08-02T18:39:15 EET" duration-ms="376321">
       <class name="appiumtests.AppiumTests">
-        <test-method is-config="true" signature="initialization()[pri:0, instance:appiumtests.AppiumTests@2bfc268b]" started-at="2021-06-20T21:16:10 EET" name="initialization" finished-at="2021-06-20T21:16:23 EET" duration-ms="12520" status="PASS">
+        <test-method is-config="true" signature="initialization()[pri:0, instance:appiumtests.AppiumTests@6283d8b8]" started-at="2021-08-02T18:32:59 EET" name="initialization" finished-at="2021-08-02T18:33:12 EET" duration-ms="12865" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialization -->
-        <test-method signature="ratePlayerTestcase()[pri:0, instance:appiumtests.AppiumTests@2bfc268b]" started-at="2021-06-20T21:16:23 EET" name="ratePlayerTestcase" finished-at="2021-06-20T21:16:39 EET" duration-ms="16599" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for appiumtests.Methods$1@60094a13 (tried for 15 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for appiumtests.Methods$1@60094a13 (tried for 15 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at appiumtests.Methods.find(Methods.java:73)
-at appiumtests.Methods.fillIn(Methods.java:84)
-at appiumtests.AutomationMethods.signin(AutomationMethods.java:9)
-at appiumtests.AppiumTests.ratePlayerTestcase(AppiumTests.java:56)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'meldeeb-latitude-e6540', ip: '192.168.1.9', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-62-generic', java.version: '15.0.1'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.fanzword.ui.activities...., appPackage: com.fanzword.staging, databaseEnabled: false, desired: {appActivity: com.fanzword.ui.activities...., appPackage: com.fanzword.staging, deviceName: Galaxy J7 (2016), platformName: android, platformVersion: 8.1.0, udid: 52034a51fc3a83fb}, deviceApiLevel: 27, deviceManufacturer: samsung, deviceModel: SM-J710F, deviceName: 52034a51fc3a83fb, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 52034a51fc3a83fb, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2, platform: LINUX, platformName: Android, platformVersion: 8.1.0, statBarHeight: 48, takesScreenshot: true, udid: 52034a51fc3a83fb, viewportRect: {height: 1232, left: 0, top: 48, width: 720}, warnings: {}, webStorageEnabled: false}
-Session ID: 02133f8a-db45-49de-9bdd-a4c1170ab81a
-*** Element info: {Using=id, value=com.fanzword.staging:id/et_email}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:70)
-at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-at org.openqa.selenium.By$ById.findElement(By.java:188)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at appiumtests.Methods$1.apply(Methods.java:156)
-at appiumtests.Methods$1.apply(Methods.java:1)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-... 32 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method signature="ratePlayerTestcase()[pri:0, instance:appiumtests.AppiumTests@6283d8b8]" started-at="2021-08-02T18:33:12 EET" name="ratePlayerTestcase" finished-at="2021-08-02T18:33:27 EET" duration-ms="15425" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ratePlayerTestcase -->
-        <test-method is-config="true" signature="betweenTests()[pri:0, instance:appiumtests.AppiumTests@2bfc268b]" started-at="2021-06-20T21:16:39 EET" name="betweenTests" finished-at="2021-06-20T21:16:58 EET" duration-ms="18585" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for appiumtests.Methods$1@677dbd89 (tried for 15 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for appiumtests.Methods$1@677dbd89 (tried for 15 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at appiumtests.Methods.find(Methods.java:73)
-at appiumtests.Methods.click(Methods.java:79)
-at appiumtests.AutomationMethods.logout(AutomationMethods.java:27)
-at appiumtests.AppiumTests.betweenTests(AppiumTests.java:100)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:61)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:366)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:320)
-at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:701)
-at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:677)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:661)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'meldeeb-latitude-e6540', ip: '192.168.1.9', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-62-generic', java.version: '15.0.1'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.fanzword.ui.activities...., appPackage: com.fanzword.staging, databaseEnabled: false, desired: {appActivity: com.fanzword.ui.activities...., appPackage: com.fanzword.staging, deviceName: Galaxy J7 (2016), platformName: android, platformVersion: 8.1.0, udid: 52034a51fc3a83fb}, deviceApiLevel: 27, deviceManufacturer: samsung, deviceModel: SM-J710F, deviceName: 52034a51fc3a83fb, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 52034a51fc3a83fb, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2, platform: LINUX, platformName: Android, platformVersion: 8.1.0, statBarHeight: 48, takesScreenshot: true, udid: 52034a51fc3a83fb, viewportRect: {height: 1232, left: 0, top: 48, width: 720}, warnings: {}, webStorageEnabled: false}
-Session ID: 02133f8a-db45-49de-9bdd-a4c1170ab81a
-*** Element info: {Using=id, value=com.fanzword.staging:id/btn_drawer}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:70)
-at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-at org.openqa.selenium.By$ById.findElement(By.java:188)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at appiumtests.Methods$1.apply(Methods.java:156)
-at appiumtests.Methods$1.apply(Methods.java:1)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-... 37 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method is-config="true" signature="afterTests()[pri:0, instance:appiumtests.AppiumTests@6283d8b8]" started-at="2021-08-02T18:33:27 EET" name="afterTests" finished-at="2021-08-02T18:33:40 EET" duration-ms="12307" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- betweenTests -->
-        <test-method signature="recommendSubTestcase()[pri:1, instance:appiumtests.AppiumTests@2bfc268b]" started-at="2021-06-20T21:16:58 EET" name="recommendSubTestcase" finished-at="2021-06-20T21:16:58 EET" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for appiumtests.Methods$1@677dbd89 (tried for 15 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for appiumtests.Methods$1@677dbd89 (tried for 15 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at appiumtests.Methods.find(Methods.java:73)
-at appiumtests.Methods.click(Methods.java:79)
-at appiumtests.AutomationMethods.logout(AutomationMethods.java:27)
-at appiumtests.AppiumTests.betweenTests(AppiumTests.java:100)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:61)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:366)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:320)
-at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:701)
-at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:677)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:661)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'meldeeb-latitude-e6540', ip: '192.168.1.9', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-62-generic', java.version: '15.0.1'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.fanzword.ui.activities...., appPackage: com.fanzword.staging, databaseEnabled: false, desired: {appActivity: com.fanzword.ui.activities...., appPackage: com.fanzword.staging, deviceName: Galaxy J7 (2016), platformName: android, platformVersion: 8.1.0, udid: 52034a51fc3a83fb}, deviceApiLevel: 27, deviceManufacturer: samsung, deviceModel: SM-J710F, deviceName: 52034a51fc3a83fb, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 52034a51fc3a83fb, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2, platform: LINUX, platformName: Android, platformVersion: 8.1.0, statBarHeight: 48, takesScreenshot: true, udid: 52034a51fc3a83fb, viewportRect: {height: 1232, left: 0, top: 48, width: 720}, warnings: {}, webStorageEnabled: false}
-Session ID: 02133f8a-db45-49de-9bdd-a4c1170ab81a
-*** Element info: {Using=id, value=com.fanzword.staging:id/btn_drawer}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:70)
-at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-at org.openqa.selenium.By$ById.findElement(By.java:188)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at appiumtests.Methods$1.apply(Methods.java:156)
-at appiumtests.Methods$1.apply(Methods.java:1)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-... 37 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        </test-method> <!-- afterTests -->
+        <test-method signature="rateGoalTestcase()[pri:1, instance:appiumtests.AppiumTests@6283d8b8]" started-at="2021-08-02T18:33:40 EET" name="rateGoalTestcase" finished-at="2021-08-02T18:33:55 EET" duration-ms="15598" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- rateGoalTestcase -->
+        <test-method is-config="true" signature="afterTests()[pri:0, instance:appiumtests.AppiumTests@6283d8b8]" started-at="2021-08-02T18:33:55 EET" name="afterTests" finished-at="2021-08-02T18:34:07 EET" duration-ms="11338" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTests -->
+        <test-method signature="recommendSubTestcase()[pri:2, instance:appiumtests.AppiumTests@6283d8b8]" started-at="2021-08-02T18:34:07 EET" name="recommendSubTestcase" finished-at="2021-08-02T18:34:23 EET" duration-ms="16268" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- recommendSubTestcase -->
-        <test-method is-config="true" signature="betweenTests()[pri:0, instance:appiumtests.AppiumTests@2bfc268b]" started-at="2021-06-20T21:16:58 EET" name="betweenTests" finished-at="1970-01-01T02:00:00 EET" duration-ms="-1624216618584" status="SKIP">
+        <test-method is-config="true" signature="afterTests()[pri:0, instance:appiumtests.AppiumTests@6283d8b8]" started-at="2021-08-02T18:34:23 EET" name="afterTests" finished-at="2021-08-02T18:34:34 EET" duration-ms="11031" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- betweenTests -->
-        <test-method signature="predictScoreTestcase()[pri:2, instance:appiumtests.AppiumTests@2bfc268b]" started-at="2021-06-20T21:16:58 EET" name="predictScoreTestcase" finished-at="2021-06-20T21:16:58 EET" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for appiumtests.Methods$1@677dbd89 (tried for 15 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for appiumtests.Methods$1@677dbd89 (tried for 15 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at appiumtests.Methods.find(Methods.java:73)
-at appiumtests.Methods.click(Methods.java:79)
-at appiumtests.AutomationMethods.logout(AutomationMethods.java:27)
-at appiumtests.AppiumTests.betweenTests(AppiumTests.java:100)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:61)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:366)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:320)
-at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:701)
-at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:677)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:661)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'meldeeb-latitude-e6540', ip: '192.168.1.9', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-62-generic', java.version: '15.0.1'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.fanzword.ui.activities...., appPackage: com.fanzword.staging, databaseEnabled: false, desired: {appActivity: com.fanzword.ui.activities...., appPackage: com.fanzword.staging, deviceName: Galaxy J7 (2016), platformName: android, platformVersion: 8.1.0, udid: 52034a51fc3a83fb}, deviceApiLevel: 27, deviceManufacturer: samsung, deviceModel: SM-J710F, deviceName: 52034a51fc3a83fb, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 52034a51fc3a83fb, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2, platform: LINUX, platformName: Android, platformVersion: 8.1.0, statBarHeight: 48, takesScreenshot: true, udid: 52034a51fc3a83fb, viewportRect: {height: 1232, left: 0, top: 48, width: 720}, warnings: {}, webStorageEnabled: false}
-Session ID: 02133f8a-db45-49de-9bdd-a4c1170ab81a
-*** Element info: {Using=id, value=com.fanzword.staging:id/btn_drawer}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:70)
-at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-at org.openqa.selenium.By$ById.findElement(By.java:188)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at appiumtests.Methods$1.apply(Methods.java:156)
-at appiumtests.Methods$1.apply(Methods.java:1)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-... 37 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        </test-method> <!-- afterTests -->
+        <test-method signature="predictScoreTestcase()[pri:3, instance:appiumtests.AppiumTests@6283d8b8]" started-at="2021-08-02T18:34:34 EET" name="predictScoreTestcase" finished-at="2021-08-02T18:34:49 EET" duration-ms="14920" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- predictScoreTestcase -->
-        <test-method is-config="true" signature="betweenTests()[pri:0, instance:appiumtests.AppiumTests@2bfc268b]" started-at="2021-06-20T21:16:58 EET" name="betweenTests" finished-at="1970-01-01T02:00:00 EET" duration-ms="-1624216618591" status="SKIP">
+        <test-method is-config="true" signature="afterTests()[pri:0, instance:appiumtests.AppiumTests@6283d8b8]" started-at="2021-08-02T18:34:49 EET" name="afterTests" finished-at="2021-08-02T18:34:59 EET" duration-ms="9786" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- betweenTests -->
-        <test-method signature="guestPredictScoreTestcase()[pri:3, instance:appiumtests.AppiumTests@2bfc268b]" started-at="2021-06-20T21:16:58 EET" name="guestPredictScoreTestcase" finished-at="2021-06-20T21:16:58 EET" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for appiumtests.Methods$1@677dbd89 (tried for 15 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for appiumtests.Methods$1@677dbd89 (tried for 15 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at appiumtests.Methods.find(Methods.java:73)
-at appiumtests.Methods.click(Methods.java:79)
-at appiumtests.AutomationMethods.logout(AutomationMethods.java:27)
-at appiumtests.AppiumTests.betweenTests(AppiumTests.java:100)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:61)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:366)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:320)
-at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:701)
-at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:677)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:661)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'meldeeb-latitude-e6540', ip: '192.168.1.9', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-62-generic', java.version: '15.0.1'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.fanzword.ui.activities...., appPackage: com.fanzword.staging, databaseEnabled: false, desired: {appActivity: com.fanzword.ui.activities...., appPackage: com.fanzword.staging, deviceName: Galaxy J7 (2016), platformName: android, platformVersion: 8.1.0, udid: 52034a51fc3a83fb}, deviceApiLevel: 27, deviceManufacturer: samsung, deviceModel: SM-J710F, deviceName: 52034a51fc3a83fb, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 52034a51fc3a83fb, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2, platform: LINUX, platformName: Android, platformVersion: 8.1.0, statBarHeight: 48, takesScreenshot: true, udid: 52034a51fc3a83fb, viewportRect: {height: 1232, left: 0, top: 48, width: 720}, warnings: {}, webStorageEnabled: false}
-Session ID: 02133f8a-db45-49de-9bdd-a4c1170ab81a
-*** Element info: {Using=id, value=com.fanzword.staging:id/btn_drawer}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:70)
-at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-at org.openqa.selenium.By$ById.findElement(By.java:188)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at appiumtests.Methods$1.apply(Methods.java:156)
-at appiumtests.Methods$1.apply(Methods.java:1)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-... 37 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        </test-method> <!-- afterTests -->
+        <test-method signature="createPostTestcase()[pri:4, instance:appiumtests.AppiumTests@6283d8b8]" started-at="2021-08-02T18:34:59 EET" name="createPostTestcase" finished-at="2021-08-02T18:35:18 EET" duration-ms="19916" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- guestPredictScoreTestcase -->
-        <test-method is-config="true" signature="betweenTests()[pri:0, instance:appiumtests.AppiumTests@2bfc268b]" started-at="2021-06-20T21:16:58 EET" name="betweenTests" finished-at="1970-01-01T02:00:00 EET" duration-ms="-1624216618597" status="SKIP">
+        </test-method> <!-- createPostTestcase -->
+        <test-method is-config="true" signature="afterTests()[pri:0, instance:appiumtests.AppiumTests@6283d8b8]" started-at="2021-08-02T18:35:18 EET" name="afterTests" finished-at="2021-08-02T18:35:31 EET" duration-ms="12500" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- betweenTests -->
-        <test-method signature="guestRatePlayerTestcase()[pri:4, instance:appiumtests.AppiumTests@2bfc268b]" started-at="2021-06-20T21:16:58 EET" name="guestRatePlayerTestcase" finished-at="2021-06-20T21:16:58 EET" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for appiumtests.Methods$1@677dbd89 (tried for 15 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for appiumtests.Methods$1@677dbd89 (tried for 15 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at appiumtests.Methods.find(Methods.java:73)
-at appiumtests.Methods.click(Methods.java:79)
-at appiumtests.AutomationMethods.logout(AutomationMethods.java:27)
-at appiumtests.AppiumTests.betweenTests(AppiumTests.java:100)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:61)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:366)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:320)
-at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:701)
-at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:677)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:661)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'meldeeb-latitude-e6540', ip: '192.168.1.9', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-62-generic', java.version: '15.0.1'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.fanzword.ui.activities...., appPackage: com.fanzword.staging, databaseEnabled: false, desired: {appActivity: com.fanzword.ui.activities...., appPackage: com.fanzword.staging, deviceName: Galaxy J7 (2016), platformName: android, platformVersion: 8.1.0, udid: 52034a51fc3a83fb}, deviceApiLevel: 27, deviceManufacturer: samsung, deviceModel: SM-J710F, deviceName: 52034a51fc3a83fb, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 52034a51fc3a83fb, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2, platform: LINUX, platformName: Android, platformVersion: 8.1.0, statBarHeight: 48, takesScreenshot: true, udid: 52034a51fc3a83fb, viewportRect: {height: 1232, left: 0, top: 48, width: 720}, warnings: {}, webStorageEnabled: false}
-Session ID: 02133f8a-db45-49de-9bdd-a4c1170ab81a
-*** Element info: {Using=id, value=com.fanzword.staging:id/btn_drawer}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:70)
-at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-at org.openqa.selenium.By$ById.findElement(By.java:188)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at appiumtests.Methods$1.apply(Methods.java:156)
-at appiumtests.Methods$1.apply(Methods.java:1)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-... 37 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        </test-method> <!-- afterTests -->
+        <test-method signature="guestRatePlayerTestcase()[pri:5, instance:appiumtests.AppiumTests@6283d8b8]" started-at="2021-08-02T18:35:31 EET" name="guestRatePlayerTestcase" finished-at="2021-08-02T18:36:04 EET" duration-ms="32767" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- guestRatePlayerTestcase -->
-        <test-method is-config="true" signature="betweenTests()[pri:0, instance:appiumtests.AppiumTests@2bfc268b]" started-at="2021-06-20T21:16:58 EET" name="betweenTests" finished-at="1970-01-01T02:00:00 EET" duration-ms="-1624216618602" status="SKIP">
+        <test-method is-config="true" signature="afterTests()[pri:0, instance:appiumtests.AppiumTests@6283d8b8]" started-at="2021-08-02T18:36:04 EET" name="afterTests" finished-at="2021-08-02T18:36:16 EET" duration-ms="12606" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- betweenTests -->
-        <test-method signature="guestRecommendSubTestcase()[pri:5, instance:appiumtests.AppiumTests@2bfc268b]" started-at="2021-06-20T21:16:58 EET" name="guestRecommendSubTestcase" finished-at="2021-06-20T21:16:58 EET" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for appiumtests.Methods$1@677dbd89 (tried for 15 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for appiumtests.Methods$1@677dbd89 (tried for 15 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at appiumtests.Methods.find(Methods.java:73)
-at appiumtests.Methods.click(Methods.java:79)
-at appiumtests.AutomationMethods.logout(AutomationMethods.java:27)
-at appiumtests.AppiumTests.betweenTests(AppiumTests.java:100)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:61)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:366)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:320)
-at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:701)
-at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:677)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:661)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'meldeeb-latitude-e6540', ip: '192.168.1.9', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-62-generic', java.version: '15.0.1'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.fanzword.ui.activities...., appPackage: com.fanzword.staging, databaseEnabled: false, desired: {appActivity: com.fanzword.ui.activities...., appPackage: com.fanzword.staging, deviceName: Galaxy J7 (2016), platformName: android, platformVersion: 8.1.0, udid: 52034a51fc3a83fb}, deviceApiLevel: 27, deviceManufacturer: samsung, deviceModel: SM-J710F, deviceName: 52034a51fc3a83fb, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 52034a51fc3a83fb, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2, platform: LINUX, platformName: Android, platformVersion: 8.1.0, statBarHeight: 48, takesScreenshot: true, udid: 52034a51fc3a83fb, viewportRect: {height: 1232, left: 0, top: 48, width: 720}, warnings: {}, webStorageEnabled: false}
-Session ID: 02133f8a-db45-49de-9bdd-a4c1170ab81a
-*** Element info: {Using=id, value=com.fanzword.staging:id/btn_drawer}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:70)
-at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-at org.openqa.selenium.By$ById.findElement(By.java:188)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at appiumtests.Methods$1.apply(Methods.java:156)
-at appiumtests.Methods$1.apply(Methods.java:1)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-... 37 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        </test-method> <!-- afterTests -->
+        <test-method signature="guestRateGoalTestcase()[pri:6, instance:appiumtests.AppiumTests@6283d8b8]" started-at="2021-08-02T18:36:16 EET" name="guestRateGoalTestcase" finished-at="2021-08-02T18:36:47 EET" duration-ms="30344" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- guestRateGoalTestcase -->
+        <test-method is-config="true" signature="afterTests()[pri:0, instance:appiumtests.AppiumTests@6283d8b8]" started-at="2021-08-02T18:36:47 EET" name="afterTests" finished-at="2021-08-02T18:36:58 EET" duration-ms="10968" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTests -->
+        <test-method signature="guestRecommendSubTestcase()[pri:7, instance:appiumtests.AppiumTests@6283d8b8]" started-at="2021-08-02T18:36:58 EET" name="guestRecommendSubTestcase" finished-at="2021-08-02T18:37:29 EET" duration-ms="30844" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- guestRecommendSubTestcase -->
-        <test-method is-config="true" signature="betweenTests()[pri:0, instance:appiumtests.AppiumTests@2bfc268b]" started-at="2021-06-20T21:16:58 EET" name="betweenTests" finished-at="1970-01-01T02:00:00 EET" duration-ms="-1624216618607" status="SKIP">
+        <test-method is-config="true" signature="afterTests()[pri:0, instance:appiumtests.AppiumTests@6283d8b8]" started-at="2021-08-02T18:37:29 EET" name="afterTests" finished-at="2021-08-02T18:37:40 EET" duration-ms="11437" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- betweenTests -->
+        </test-method> <!-- afterTests -->
+        <test-method signature="guestPredictScoreTestcase()[pri:8, instance:appiumtests.AppiumTests@6283d8b8]" started-at="2021-08-02T18:37:40 EET" name="guestPredictScoreTestcase" finished-at="2021-08-02T18:38:10 EET" duration-ms="30125" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- guestPredictScoreTestcase -->
+        <test-method is-config="true" signature="afterTests()[pri:0, instance:appiumtests.AppiumTests@6283d8b8]" started-at="2021-08-02T18:38:10 EET" name="afterTests" finished-at="2021-08-02T18:38:20 EET" duration-ms="10350" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTests -->
+        <test-method signature="guestCreatePostTestcase()[pri:9, instance:appiumtests.AppiumTests@6283d8b8]" started-at="2021-08-02T18:38:20 EET" name="guestCreatePostTestcase" finished-at="2021-08-02T18:39:03 EET" duration-ms="42544" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- guestCreatePostTestcase -->
+        <test-method is-config="true" signature="afterTests()[pri:0, instance:appiumtests.AppiumTests@6283d8b8]" started-at="2021-08-02T18:39:03 EET" name="afterTests" finished-at="2021-08-02T18:39:15 EET" duration-ms="12315" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTests -->
       </class> <!-- appiumtests.AppiumTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

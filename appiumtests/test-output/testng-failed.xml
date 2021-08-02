@@ -5,14 +5,14 @@
     <classes>
       <class name="appiumtests.AppiumTests">
         <methods>
+          <include name="guestRateGoalTestcase"/>
+          <include name="createPostTestcase"/>
+          <include name="guestCreatePostTestcase"/>
           <include name="guestRecommendSubTestcase"/>
-          <include name="guestRatePlayerTestcase"/>
-          <include name="betweenTests"/>
-          <include name="guestPredictScoreTestcase"/>
-          <include name="ratePlayerTestcase"/>
           <include name="initialization"/>
-          <include name="predictScoreTestcase"/>
-          <include name="recommendSubTestcase"/>
+          <include name="afterTests"/>
+          <include name="guestPredictScoreTestcase"/>
+          <include name="guestRatePlayerTestcase"/>
         </methods>
       </class> <!-- appiumtests.AppiumTests -->
     </classes>

@@ -1,5 +1,7 @@
 package appiumtests;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import static org.testng.Assert.assertEquals;
 
 import java.net.URL;
@@ -78,7 +80,7 @@ public class ElementAssertions extends AutomationMethods{
 //		assertPageTitle("Matches");
 //		assertElementText("Today");
 //		assertEquals(0, 0);
-		Assert.assertEquals(false, true);
+		AssertJUnit.assertEquals(false, true);
 //		assertIsSelected("Today");
 //		assertElement(CALENDAR_BTN);
 //		assertElement(LIVE_BTN);

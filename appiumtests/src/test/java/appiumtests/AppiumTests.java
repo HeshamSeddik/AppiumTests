@@ -1,5 +1,6 @@
 package appiumtests;
 
+import org.testng.annotations.Test;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -134,22 +135,22 @@ public class AppiumTests extends AutomationMethods{
 		guestCreatePost();
 	}
 	
-	@BeforeMethod
-	public static void beforeTests() {
-		if(driver.currentActivity().equalsIgnoreCase("com.fanzword.ui.activities.MainActivity")) {
-			return;
-		}else {
-			driver.launchApp();
-		}
-	}
+//	@BeforeMethod
+//	public static void beforeTests() {
+//		if(driver.currentActivity().equalsIgnoreCase("com.fanzword.ui.activities.MainActivity")) {
+//			return;
+//		}else {
+//			driver.launchApp();
+//		}
+//	}
 	
 	@AfterMethod
 	public static void afterTests() {
 		delay(2);
 		backToMainScreen();
 		logout();
-		delay(1);
-		driver.closeApp();
+//		delay(1);
+//		driver.closeApp();
 		
 //		driver.startActivity(new Activity("com.fanzword.staging", "com.fanzword.ui.activities.MainActivity"));
 	}
